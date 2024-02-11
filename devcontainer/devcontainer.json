@@ -1,0 +1,6 @@
+{
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "postCreateCommand": "gem install rails && rails new ./ --database=postgresql && bundle install"
+}
