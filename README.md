@@ -35,10 +35,10 @@ development:
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  # username: postgres
+  username: postgres
 
   # The password associated with the PostgreSQL role (username).
-  # password: postgres
+  password: postgres
  
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -64,6 +64,10 @@ development:
 test:
   <<: *default
   database: teste_dio
+  username: postgres
+  password: postgres
+  host: host.docker.internal
+  port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -90,6 +94,8 @@ production:
   database: production_dio
   username: postgres
   password: postgres
+  host: host.docker.internal
+  port: 5432
   #password: <%= ENV["DIO_DA_ARQUITETURA_AO_DEPLOY_RONRAILS_DATABASE_PASSWORD"] %>
 
 
